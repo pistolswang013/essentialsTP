@@ -1126,7 +1126,7 @@ class essentialsTP extends PluginBase  implements CommandExecutor, Listener {
                             {
                                 if ($sql['world'] == $curr_world->getName())
                                 {
-                                    $pos = new Position((int) $sql['x'], (int) $sql['y'], (int) $sql['z'], $curr_world);
+                                    $pos = $sender->getServer()->getDefaultLevel()->getSpawnLocation();
 
                                     $sender->teleport($pos);
                                     $this->update_cooldown($sender->getName(), time(), 'spawn');
